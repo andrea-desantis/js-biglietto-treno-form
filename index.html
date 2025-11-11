@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,43 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
-    <label for="km">Quanti Kilometri vuoi percorrere?</label> <br>
-    <input type="number" id="km"> <br>
 
-    <label for="eta">Quanti hanni ha il passeggero?</label> <br>
-    <input type="number" id="eta"> <br>
-    
-    <button class="btn">Procedere</button>
+<body class="bg-bordoux">
 
 
+    <p id="prezzo">prezzo</p>
+
+    <div class="">
+        <div>
+            <h1 class="titolo">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+        </div>
+        <div>
+            <div class="flex col-30"></div>
+        </div>
+        <label for="km">Quanti Kilometri vuoi percorrere?</label> <br>
+        <input type="number" id="km"> <br>
+
+        <label for="eta">Quanti anni ha il passeggero?</label> <br>
+        <input type="number" id="eta"> <br>
+
+        <button class="btn">Procedere</button>
+    </div>
+    <div>
+        <!-- il tuo biglietto  -->
+        <div>
+            <h2 class="titolo">IL TUO BIGLIETTO</h2>
+        </div>
+        <!-- dettagli passeggeri  -->
+        <div>
+            <div></div>
+            <div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <!-- fine dettagli passeggeri -->
+    </div>
     <script src="./script.js"></script>
 </body>
+
 </html>

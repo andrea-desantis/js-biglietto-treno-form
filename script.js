@@ -31,28 +31,35 @@ const etaElem = document.getElementById("eta");
 const btnElem = document.querySelector("button");
 const costoPerKm = 0.21 ;
 
-const km = Number(kmElem.value);
-const eta = Number(etaElem.value);
-let risultato = km * costoPerKm;
+let messaggioCosto = document.getElementById("prezzo");
+
 
 btnElem.addEventListener("click", function(){
     
-    if(km <= 0 || eta <= 0){
+    const km = Number(kmElem.value);
+    const eta = Number(etaElem.value);
+    let risultato = km * costoPerKm;
+    if(km <= 0 || eta <= 0 || isNaN(km) || isNaN(eta)){
         // eta non valida
         risultato = 'eta non valida';
-    }else
+        messaggioCosto.innerHTML= 'eta non valida';
+    }
+
     if(eta < 18 && eta > 0){
         // sconto minorenni
         risultato = risultato * 0.8;
-    } else 
-    if(eta >= 65){
+        risultato = risultato.toFixed(2);
+        messaggioCosto.innerHTML= `${risultato} euro`;
+    } else if(eta >= 65){
         // sconto over 65
         risultato = risultato * 0.6;
-
-    } else if(eta >= 18 && eta < 65){
-        // eta senza sconti 
+        risultato = risultato.toFixed(2);
+        messaggioCosto.innerHTML= `${risultato} euro`;
+    } else{
+        risultato = risultato.toFixed(2);
+        messaggioCosto.innerHTML= `${risultato} euro`;
         
-    } 
-    risultato = risultato.toFixed(2);
-    console.log(risultato);
+        }
+    
+    
 })
