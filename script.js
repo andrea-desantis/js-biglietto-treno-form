@@ -26,28 +26,33 @@
 // da seguire per il secondo milestone. Potete scegliere di implementare una soluzione 
 // completamente diversa oppure simile, ma in ogni caso cercate di farla vostra.
 
-const kmElem = document.getElementById(km);
-const etaElem = document.getElementById(eta);
-const costoPerKm = kmElem * 0.21 ;
-let risultato = 0;
-
-
+const kmElem = document.getElementById("km");
+const etaElem = document.getElementById("eta");
 const btnElem = document.querySelector("button");
-btnElem.addEventListener("click", function(){
-    if(etaElem < 18 && etaElem > 0){
-        // sconto minorenni
-        risultato = costoPerKm / 100 * 80;
-    } else 
-    if(etaElem >= 65){
-        // sconto over 65
-        risultato = costoPerKm / 100 * 60;
+const costoPerKm = 0.21 ;
 
-    } else if(etaElem >= 18 && etaElem <65){
-        // eta senza sconti 
-        risultato = costoPerKm;
-    } else{
+const km = Number(kmElem.value);
+const eta = Number(etaElem.value);
+let risultato = km * costoPerKm;
+
+btnElem.addEventListener("click", function(){
+    
+    if(km <= 0 || eta <= 0){
         // eta non valida
         risultato = 'eta non valida';
-    }
-    console.log(risultato)
+    }else
+    if(eta < 18 && eta > 0){
+        // sconto minorenni
+        risultato = risultato * 0.8;
+    } else 
+    if(eta >= 65){
+        // sconto over 65
+        risultato = risultato * 0.6;
+
+    } else if(eta >= 18 && eta < 65){
+        // eta senza sconti 
+        
+    } 
+    risultato = risultato.toFixed(2);
+    console.log(risultato);
 })
