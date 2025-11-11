@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
@@ -9,41 +9,71 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-bordoux">
+<body class="bg-bordoux ">
 
 
-    <p id="prezzo">prezzo</p>
+
 
     <div class="">
         <div>
             <h1 class="titolo">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
         </div>
-        <div>
-            <div class="flex col-30"></div>
+        <div class="bg-white flex margin-y calcola-prezzo gap-30 column">
+            <div class="flex  evenly">
+                <div class="col-30 flex column gap-10">
+                    <label for="utente" class="bordoux">Nome e cognome del passeggero?</label>
+                    <input type="text">
+                </div>
+                <div class="col-30 flex column gap-10">
+                    <label for="km" class="bordoux">Quanti Kilometri vuoi percorrere?</label>
+                    <input type="number" id="km">
+                </div>
+                <div class="col-30 flex column gap-10">
+                    <label for="eta" class="bordoux">Quanti anni ha il passeggero?</label>
+                    <input type="number" id="eta">
+                </div>
+            </div>
+
+            <div class=" flex center gap-10">
+                <button class="btn" id="btn"><strong>Genera</strong></button>
+                <button class="btn"><strong>Annulla</strong></button>
+            </div>
         </div>
-        <label for="km">Quanti Kilometri vuoi percorrere?</label> <br>
-        <input type="number" id="km"> <br>
 
-        <label for="eta">Quanti anni ha il passeggero?</label> <br>
-        <input type="number" id="eta"> <br>
 
-        <button class="btn">Procedere</button>
+
     </div>
-    <div>
+    <div class="margin-y">
         <!-- il tuo biglietto  -->
         <div>
             <h2 class="titolo">IL TUO BIGLIETTO</h2>
         </div>
         <!-- dettagli passeggeri  -->
-        <div>
-            <div></div>
+        <div class="bg-white gap-10 padding-30y">
             <div>
-                <div></div>
-                <div></div>
+                <h4>DETTAGLIO PASSEGGERI</h4>
+            </div>
+            <div class="flex border">
+                <div>
+                    <!-- nome passeggero -->
+                    <h3>NOME PASSEGGERO</h3>
+                    <p id="nome"></p>
+                </div>
+                <div>
+                    <!-- offerta -->
+                    <p id="offerta"></p>
+                    <!-- carrozza -->
+                    <p id="carrozza"></p>
+                    <!-- codice CP -->
+                    <p id="cp"></p>
+                    <!-- costo biglietto -->
+                    <p id="prezzo">prezzo</p>
+                </div>
             </div>
         </div>
         <!-- fine dettagli passeggeri -->
     </div>
+
     <script src="./script.js"></script>
 </body>
 

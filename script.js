@@ -28,7 +28,7 @@
 
 const kmElem = document.getElementById("km");
 const etaElem = document.getElementById("eta");
-const btnElem = document.querySelector("button");
+const btnElem = document.getElementById("btn");
 const costoPerKm = 0.21 ;
 
 let messaggioCosto = document.getElementById("prezzo");
