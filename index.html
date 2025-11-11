@@ -22,7 +22,7 @@
             <div class="flex  evenly">
                 <div class="col-30 flex column gap-10">
                     <label for="utente" class="bordoux">Nome e cognome del passeggero?</label>
-                    <input type="text">
+                    <input type="text" id="utente">
                 </div>
                 <div class="col-30 flex column gap-10">
                     <label for="km" class="bordoux">Quanti Kilometri vuoi percorrere?</label>
@@ -53,21 +53,41 @@
             <div>
                 <h4>DETTAGLIO PASSEGGERI</h4>
             </div>
-            <div class="flex border">
-                <div>
+            <div class="flex border ">
+                <div class="col-40">
                     <!-- nome passeggero -->
                     <h3>NOME PASSEGGERO</h3>
                     <p id="nome"></p>
                 </div>
-                <div>
-                    <!-- offerta -->
-                    <p id="offerta"></p>
-                    <!-- carrozza -->
-                    <p id="carrozza"></p>
-                    <!-- codice CP -->
-                    <p id="cp"></p>
-                    <!-- costo biglietto -->
-                    <p id="prezzo">prezzo</p>
+                <div class="flex evenly col-60">
+                    <div>
+                        <!-- offerta -->
+                        <p><strong>Offerta</strong></p>
+                        <p id="offerta">//</p>
+                    </div>
+                    <div>
+                        <!-- carrozza -->
+                        <p><strong>Carrozza</strong></p>
+                        <p id="carrozza">//</p>
+                    </div>
+                    <div>
+                        <!-- codice CP -->
+                        <p><strong>Codice CP</strong></p>
+                        <p id="cp">//</p>
+                    </div>
+                    <div> 
+                        <!-- costo biglietto -->
+                        <p><strong>Prezzo</strong></p>
+                        <p id="prezzo">//</p>
+                    </div>
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </div>

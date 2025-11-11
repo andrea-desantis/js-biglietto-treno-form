@@ -31,14 +31,24 @@ const etaElem = document.getElementById("eta");
 const btnElem = document.getElementById("btn");
 const costoPerKm = 0.21 ;
 
-let messaggioCosto = document.getElementById("prezzo");
 
+let messaggioOfferta = document.getElementById("offerta");
+let messaggioCarrozza = document.getElementById("carrozza");
+let messaggioCp = document.getElementById("cp");
+let messaggioCosto = document.getElementById("prezzo");
+let messaggioNome = document.getElementById("nome");
+let nomeUtente = document.getElementById("utente");
 
 btnElem.addEventListener("click", function(){
     
     const km = Number(kmElem.value);
     const eta = Number(etaElem.value);
     let risultato = km * costoPerKm;
+
+     
+    messaggioCarrozza.innerHTML =  Math.floor(Math.random() * 8) +1;
+    messaggioCp.innerHTML = '//'
+    messaggioNome.innerText = nomeUtente.value;
     if(km <= 0 || eta <= 0 || isNaN(km) || isNaN(eta)){
         // eta non valida
         risultato = 'eta non valida';
@@ -50,16 +60,16 @@ btnElem.addEventListener("click", function(){
         risultato = risultato * 0.8;
         risultato = risultato.toFixed(2);
         messaggioCosto.innerHTML= `${risultato} euro`;
+        messaggioOfferta.innerHTML = 'Biglietto Under18';
     } else if(eta >= 65){
         // sconto over 65
         risultato = risultato * 0.6;
         risultato = risultato.toFixed(2);
         messaggioCosto.innerHTML= `${risultato} euro`;
+        messaggioOfferta.innerHTML = 'Biglietto Over65';
     } else{
         risultato = risultato.toFixed(2);
         messaggioCosto.innerHTML= `${risultato} euro`;
-        
-        }
-    
-    
+        messaggioOfferta.innerHTML = 'Biglietto Standard';
+        }   
 })
